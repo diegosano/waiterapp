@@ -9,7 +9,7 @@ export async function createProduct(req: Request, res: Response) {
 
     const product = await Product.create({
       price: Number.parseFloat(price),
-      ingredients: JSON.parse(ingredients),
+      ingredients: ingredients ? JSON.parse(ingredients) : [],
       name,
       description,
       category,
